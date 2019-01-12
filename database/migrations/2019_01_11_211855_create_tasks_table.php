@@ -17,8 +17,17 @@ class CreateTasksTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('category');
-            $table->text('description');            
+            $table->text('description');
+            $table->dateTime('task_start_time')->nullable();
+            $table->dateTime('task_end_time')->nullable();
+            $table->dateTime('task_deadline')->nullable();
+            $table->boolean('assigned')->default(false);
+            $table->boolean('completed')->default(false);
             $table->timestamps();
+            // priority
+            // project
+            // enjoyment
+
         });
     }
 
